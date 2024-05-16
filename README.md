@@ -1,11 +1,11 @@
 # 0x00. AirBnB_Console - The Console #
 ## 0x00. Table of Contents ##
-- [0x01 Introduction](0x01.-Introduction)
-- [0x02 Environment](0x02.-Environment)
-- [0x03 Installation](0x03.-Installation)
-- [0x04 Testing](0x04.-Testing)
-- [0x05 Usage](0X05.-Usage)
-- [0x06 Authors](0x06.-Author)
+- [0x01 Introduction](#0x01.-Introduction)
+- [0x02 Environment](#0x02.-Environment)
+- [0x03 Installation](#0x03.-Installation)
+- [0x04 Testing](#0x04.-Testing)
+- [0x05 Usage](#0X05.-Usage)
+- [0x06 Authors](#0x06.-Author)
 
 This is a Team project, to build a clone of [AirBnB](https://www.airbnb.com/). 
 This stage 1 project is the first step towards building a full web application: AirBnB clone. 

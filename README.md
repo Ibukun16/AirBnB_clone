@@ -52,7 +52,7 @@ change to the `AirBnB` directory and run the command:
  ./console.py
 ```
 
-### Execution ###
+* ### Execution ###
  
 In interactive mode
 

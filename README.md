@@ -54,7 +54,7 @@ change to the `AirBnB` directory and run the command:
 
 * ### Execution ###
  
-In interactive mode
+**In interactive mode**
 
 ```bash 
 $ ./console.py
@@ -69,7 +69,7 @@ EOF  help  quit
 (hbnb) quit
 $
 ```
-In Non-interactive mode
+**In Non-interactive mode**
 ```
 $ echo "help" | ./console.py
 (hbnb)
@@ -98,15 +98,15 @@ All the tests are defined in the tests folder.
 
 ### Documentation ###
 
-- Modules:
+- _Modules_:
 ```
 python3 -c 'print(__import__("my_module").__doc__)'
 ```
-- Classes:
+- _Classes_:
 ```
 python3 -c 'print(__import__("my_module").MyClass.__doc__)'
 ```
-- Functions (inside and outside a class):
+- _Functions (inside and outside a class)_:
 ```
 python3 -c 'print(__import__("my_module").my_function.__doc__)'
 ```
@@ -147,7 +147,7 @@ Documented commands (type help <topic>):
 EOF  all  count  create  destroy  help  quit  show  update
 (hbnb)
 ```
-- Quit the console:
+- **Quit the console**:
 ```
 (hbnb) quit
 $

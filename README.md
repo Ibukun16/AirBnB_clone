@@ -28,8 +28,8 @@ All the classes are handled by the `Storage` engine in the `FileStorage` Class.
 
 ## 0x02 Environment ##
 Style guidelines:
-- pycodestyle (version 2.7.*)
-- PEP8
++ pycodestyle (version 2.7.*)
++ PEP8
 All the development and testing was runned over an operating system Ubuntu 20.04 LTS using programming language Python 3.8.3. The editors used were VIM 8.1.2269, VSCode 1.6.1 and Atom 1.58.0 . Control version using Git 2.25.1.
 ## 0x03 Installation ##
 git clone https://github.com/aysuarex/AirBnB_clone.git

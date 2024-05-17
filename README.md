@@ -1,5 +1,5 @@
 # AirBnB Clone #
-<p align="center"><img src="bnb.png" alt="AirBnb logo"></p>
+![hbnb](https://github.com/Ibukun16/AirBnB_clone/assets/81274116/55fb97e5-4b78-4c22-9846-707791da4805)
 
 ## Description: ##
 This is a Team project, to build a clone of [AirBnB](https://www.airbnb.com/). 

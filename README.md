@@ -146,10 +146,10 @@ EOF  all  count  create  destroy  help  quit  show  update
 $
 ```
 ### Commands ###
-> The commands are displayed in the following format Command/usage/ example with output
+> _The commands are displayed in the following format Command/usage/ example with output_
 
 - Create
-> Creates a new instance of a given class. The class's ID is printed and the instance is saved to the file file.json.
+> _Creates a new instance of a given class. The class's ID is printed and the instance is saved to the file file.json_.
 ```
 create <class>
 ```
@@ -168,7 +168,7 @@ show <class> <id>
 (hbnb)
 ```
 - Destroy
-> Deletes an instance of a given class with a given ID. Update the file.json
+> _Deletes an instance of a given class with a given ID. Update the file.json_
 ```
 (hbnb) create User
 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
@@ -180,7 +180,7 @@ show <class> <id>
 (hbnb)
 ```
 - All
-> Prints all string representation of all instances of a given class. If no class is passed, all classes are printed.
+> _Prints all string representation of all instances of a given class. If no class is passed, all classes are printed_.
 ```
 (hbnb) create BaseModel
 e45ddda9-eb80-4858-99a9-226d4f08a629
@@ -189,7 +189,7 @@ e45ddda9-eb80-4858-99a9-226d4f08a629
 ["[BaseMode]]
 ```
 - count
-> Prints the number of instances of a given class.
+> _Prints the number of instances of a given class_.
 ```
 (hbnb) create City
 4e01c33e-2564-42c2-b61c-17e512898bad
@@ -200,7 +200,7 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
 (hbnb)
 ```
 - Update
-> Updates an instance based on the class name, id, and kwargs passed. Update the file.json
+> _Updates an instance based on the class name, id, and kwargs passed. Update the file.json_
 
 ## 0x06 Author ##
 <details>

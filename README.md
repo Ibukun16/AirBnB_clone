@@ -187,6 +187,7 @@ e45ddda9-eb80-4858-99a9-226d4f08a629
 (hbnb) all BaseModel
 ["[BaseModel] (4c8f7ebc-257f-4ed1-b26b-e7aace459897) [BaseModel] (4c8f7ebc-257f-4ed1-b26b-e7aace459897) {'id': '4c8f7ebc-257f-4ed1-b26b-e7aace459897', 'created_at': datetime.datetime(2021, 11, 13, 22, 19, 19, 447155), 'updated_at': datetime.datetime(2021, 11, 13, 22, 19, 19, 447257), 'name': 'My First Model', 'my_number': 89}"]
 ["[BaseMode]]
+```
 - count
 > Prints the number of instances of a given class.
 ```
@@ -200,7 +201,7 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
 ```
 - Update
 > Updates an instance based on the class name, id, and kwargs passed. Update the file.json
-```
+
 ## 0x06 Author ##
 <details>
     <summary>AGUNBIADE Ibukun</summary>

@@ -48,7 +48,7 @@ change to the `AirBnb` directory and run the command:
 ```
 
  ### Execution ###
- In interactive mode
+- In interactive mode
 ``` 
 $ ./console.py
 (hbnb) help
@@ -62,7 +62,7 @@ EOF  help  quit
 (hbnb) quit
 $
 ```
-in Non-interactive mode
+- In Non-interactive mode
 ```
 $ echo "help" | ./console.py
 (hbnb)
@@ -87,7 +87,7 @@ $
 
 ## 0x04 Testing ##
 
-All the test are defined in the tests folder.
+All the tests are defined in the tests folder.
 
 ### Documentation ###
 
@@ -174,7 +174,9 @@ show <class> <id>
 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
 (hbnb) destroy User 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
 (hbnb) show User 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
+```
 ** no instance found **
+```
 (hbnb)
 ```
 - All

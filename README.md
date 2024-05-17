@@ -210,7 +210,7 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
     </ul>
 </details>
 ```
-### How to add Author's file ##
+### How to add Author's file ###
 `Bash script for generating the list of authors in git repo`
 ```
 #!/bin/sh

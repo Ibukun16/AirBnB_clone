@@ -159,15 +159,12 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
 update
 Updates an instance based on the class name, id, and kwargs passed. Update the file.json
 
-## Authors
+## 0x06. Author ##
 <details>
-    <summary>Godswill Kalu</summary>
-    <summary>TIESSIA BOLA</summary>
+    <summary>Ibukun AGUNBIADE</summary>
     <ul>
-    <li><a href="https://www.github.com/lordwill">Github</a></li>
-    <li><a href="mailto:messagelordwill@gmail.com">e-mail</a></li>
-    <li><a href="https://www.github.com/Adamsbola">Github</a></li>
-    <li><a href="mailto:adamadu52@gmail.com">e-mail</a></li>
+    <li><a href="https://www.github.com/Ibukun16">Github</a></li>
+    <li><a href="mailto:messageib.agunbiade18@gmail.com">e-mail</a></li>
     </ul>
 </details>
 
@@ -178,5 +175,3 @@ Updates an instance based on the class name, id, and kwargs passed. Update the f
 git shortlog -se
 | perl -spe 's/^\s+\d+\s+//'
 | sed -e '/^CommitSyncScript.*$/d' 
-
-## 0x06. Author ##

@@ -1,4 +1,11 @@
-# 0x00. AirBnB_Console - The Console #
+# AirBnB Clone #
+<p align="center"><img src="bnb.png" alt="AirBnb  logo"></p>
+
+## Description: ##
+This is a Team project, to build a clone of [AirBnB](https://www.airbnb.com/). 
+This phase is very important for an aspiring full-stack engineer because it will be used to execute other projects like; HTML/CSS templating, database storage, API, front-end integration and the likes. 
+
+# AirBnB_Console - The Console #
 ## 0x00. Table of Contents ##
 
 - [0x01 Introduction](#0x01-Introduction)
@@ -9,11 +16,8 @@
 - [0x06 Authors](#0x06-Author)
   
 ## 0x01 Introduction ##
-This is a Team project, to build a clone of [AirBnB](https://www.airbnb.com/). 
 The project is in phases. This phase is the first step towards building a full web application: AirBnB clone. 
-This phase is very important for an aspiring full-stack engineer because it will be used to execute other projects like; HTML/CSS templating, database storage, API, front-end integration etc.,
-
-Phase 1 which is the first stage 1 project is to build a Console. 
+The first segment of the project which is the first task or phase 1, is to build a Console. 
 The console is a command interpreter to manage objects' abstraction between objects and how they are stored.
 To see the fundamental background of the project visit the [Wiki](https://en.wikipedia.org/wiki/Airbnb).
 

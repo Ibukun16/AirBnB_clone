@@ -33,7 +33,7 @@ All the classes are handled by the `Storage` engine in the `FileStorage` Class.
 
 All the development and testing was runned over an operating system
 Ubuntu 20.04 LTS using programming language Python 3.8.3. The editors
-used were VIM 8.1.2269, VSCode 1.6.1 and Atom 1.58.0 . Control version
+used were VIM 8.1.2269, VSCode 1.6.1 and Atom 1.58.0. Control version
 using Git 2.25.1.
 
 ## 0x03 Installation ##
@@ -41,7 +41,7 @@ using Git 2.25.1.
 ```
 git clone https://github.com/aysuarex/AirBnB_clone.git
 ```
-change to the `AirBnb` directory and run the command:
+change to the `AirBnB` directory and run the command:
 
  ```
  ./console.py
@@ -175,7 +175,7 @@ show <class> <id>
 (hbnb) destroy User 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
 (hbnb) show User 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
 ```
-** no instance found **
+**no instance found**
 ```
 (hbnb)
 ```

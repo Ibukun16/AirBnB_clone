@@ -134,12 +134,12 @@ python3 -m unittest discover tests
 ```
 
 ## 0x05 Usage ##
-- Start the console in interactive mode:
+- **Start the console in interactive mode**:
 ```
 $ ./console.py
 (hbnb)
 ```
-- Use help to see the available commands:
+- **Use help to see the available commands**:
 ```
 (hbnb) help
 Documented commands (type help <topic>):
@@ -155,7 +155,7 @@ $
 ### Commands ###
 > _The commands are displayed in the following format Command/usage/ example with output_
 
-- Create
+- **Create**
 > _Creates a new instance of a given class. The class's ID is printed and the instance is saved to the file file.json_.
 ```
 create <class>
@@ -165,7 +165,7 @@ create <class>
 6cfb47c4-a434-4da7-ac03-2122624c3762
 (hbnb)
 ```
-- Show
+- **Show**
 ```
 show <class> <id>
 ```
@@ -174,7 +174,7 @@ show <class> <id>
 [BaseModel] (a) [BaseModel] (6cfb47c4-a434-4da7-ac03-2122624c3762) {'id': '6cfb47c4-a434-4da7-ac03-2122624c3762', 'created_at': datetime.datetime(2021, 11, 14, 3, 28, 45, 571360), 'updated_at': datetime.datetime(2021, 11, 14, 3, 28, 45, 571389)}
 (hbnb)
 ```
-- Destroy
+- **Destroy**
 > _Deletes an instance of a given class with a given ID. Update the file.json_
 ```
 (hbnb) create User
@@ -182,11 +182,11 @@ show <class> <id>
 (hbnb) destroy User 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
 (hbnb) show User 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
 ```
-**no instance found**
+**No instance found**
 ```
 (hbnb)
 ```
-- All
+- **All**
 > _Prints all string representation of all instances of a given class. If no class is passed, all classes are printed_.
 ```
 (hbnb) create BaseModel
@@ -195,7 +195,7 @@ e45ddda9-eb80-4858-99a9-226d4f08a629
 ["[BaseModel] (4c8f7ebc-257f-4ed1-b26b-e7aace459897) [BaseModel] (4c8f7ebc-257f-4ed1-b26b-e7aace459897) {'id': '4c8f7ebc-257f-4ed1-b26b-e7aace459897', 'created_at': datetime.datetime(2021, 11, 13, 22, 19, 19, 447155), 'updated_at': datetime.datetime(2021, 11, 13, 22, 19, 19, 447257), 'name': 'My First Model', 'my_number': 89}"]
 ["[BaseMode]]
 ```
-- count
+- **Count**
 > _Prints the number of instances of a given class_.
 ```
 (hbnb) create City
@@ -206,7 +206,7 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
 2
 (hbnb)
 ```
-- Update
+- **Update**
 > _Updates an instance based on the class name, id, and kwargs passed. Update the file.json_
 
 ## 0x06 Author ##

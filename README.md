@@ -22,7 +22,7 @@ Retrieve an object from a file.
 Do operations on objects.
 Destroy an object.
 ### Storage
-All the classes are handled by the Storage engine in the FileStorage Class.
+All the classes are handled by the <span style="background-color:grey">Storage</span> engine in the <span style="background-color:grey">FileStorage</span> Class.
 
 ## 0x01. Introduction ##
 ## 0x02. Environment ##

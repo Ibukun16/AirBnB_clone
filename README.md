@@ -28,8 +28,8 @@ All the classes are handled by the `Storage` engine in the `FileStorage` Class.
 
 ## 0x02 Environment ##
 * Style guidelines:
-- [pycodestyle (version 2.8.*)](https://pycodestyle.pycqa.org/en/2.8.0/)
-- [PEP8](https://peps.python.org/pep-0008/)
+  - [pycodestyle (version 2.8.*)](https://pycodestyle.pycqa.org/en/2.8.0/)
+  - [PEP8](https://peps.python.org/pep-0008/)
 
 All the development and testing was runned over an operating system
 Ubuntu 20.04 LTS using programming language Python 3.8.3. The editors

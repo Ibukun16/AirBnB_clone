@@ -161,7 +161,7 @@ Updates an instance based on the class name, id, and kwargs passed. Update the f
 
 ## 0x06. Author ##
 <details>
-    <summary>Ibukun AGUNBIADE</summary>
+    <summary>AGUNBIADE Ibukun</summary>
     <ul>
     <li><a href="https://www.github.com/Ibukun16">Github</a></li>
     <li><a href="mailto:messageib.agunbiade18@gmail.com">e-mail</a></li>

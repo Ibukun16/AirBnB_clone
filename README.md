@@ -32,9 +32,8 @@ All the classes are handled by the `Storage` engine in the `FileStorage` Class.
   - [PEP8](https://peps.python.org/pep-0008/)
 
 All the development and testing was runned over an operating system
-Ubuntu 20.04 LTS using programming language Python 3.8.3. The editors
-used were VIM 8.1.2269, VSCode 1.6.1 and Atom 1.58.0. Control version
-using Git 2.25.1.
+**Ubuntu 20.04 LTS** using **Python 3.8.3 programming language**. 
+The editors used were **VIM 8.1.2269, VSCode 1.6.1 and Atom 1.58.0** control version, using **Git 2.25.1**.
 
 ## 0x03 Installation ##
 

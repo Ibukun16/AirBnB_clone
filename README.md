@@ -8,10 +8,10 @@
 - [0x06 Authors](#0x06.-Author)
 
 This is a Team project, to build a clone of [AirBnB](https://www.airbnb.com/). 
-This stage 1 project is the first step towards building a full web application: AirBnB clone. 
-This first step is very important for an aspiring full-stack engineer because it will be used to execute other projects like; HTML/CSS templating, database storage, API, front-end integration etc.,
+The project is in phases. This phase is the first step towards building a full web application: AirBnB clone. 
+This phase is very important for an aspiring full-stack engineer because it will be used to execute other projects like; HTML/CSS templating, database storage, API, front-end integration etc.,
 
-The stage 1 project is to build a Console. 
+Phase 1 which is the first stage 1 project is to build a Console. 
 The console is a command interpreter to manage objects' abstraction between objects and how they are stored.
 To see the fundamental background of the project visit the [Wiki](https://en.wikipedia.org/wiki/Airbnb).
 
@@ -21,6 +21,8 @@ Create a new object.
 Retrieve an object from a file.
 Do operations on objects.
 Destroy an object.
+### Storage
+All the classes are handled by the Storage engine in the FileStorage Class.
 
 ## 0x01. Introduction ##
 ## 0x02. Environment ##

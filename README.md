@@ -1,9 +1,9 @@
 # AirBnB Clone #
-<p align="center"><img src="bnb.png" alt="AirBnb  logo"></p>
+<p align="center"><img src="bnb.png" alt="AirBnb logo"></p>
 
 ## Description: ##
 This is a Team project, to build a clone of [AirBnB](https://www.airbnb.com/). 
-This phase is very important for an aspiring full-stack engineer because it will be used to execute other projects like; HTML/CSS templating, database storage, API, front-end integration and the likes. 
+This project is very important for an aspiring full-stack engineer because it will be used to execute other projects like; HTML/CSS templating, database storage, API, front-end integration and the likes. 
 
 # AirBnB_Console - The Console #
 ## 0x00. Table of Contents ##

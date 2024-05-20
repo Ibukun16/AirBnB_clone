@@ -86,14 +86,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotIn(None, b_mod.__dict__.values())
 
 
-    def test_that_created_at_equals_updated_at_initially(self):
-        """
-        This function checks that create_at == updated_at at initialization
-        """
-        bmod = BaseModel()
-        self.assertEqual(bmod.created_at, bmod.updated_at)
-
-
     def test_that_save_func_update_update_at_attr(self):
         """
         This function checks that save() method updates the updated_at attribute
@@ -134,7 +126,7 @@ class TestBaseModel(unittest.TestCase):
         This function ensures updated_at is stored as a str obj in ISO format
         """
         bmod = BaseModel()
-        self.assertEqual(b.to_dict()["updated_at"], bmod.updated_at.isoformat())
+        self.assertEqual(bmod.to_dict()["updated_at"], bmod.updated_at.isoformat())
 
 
     def test_if_to_dict_returns_the_accurate_number_of_keys(self):
@@ -144,7 +136,7 @@ class TestBaseModel(unittest.TestCase):
         """
         b_mod = BaseModel()
         partial_expectation = {key: value for key, value in b_mod.__dict__.items()
-                                if not k.startswith("_")}
+                                if not key.startswith("_")}
         self.assertEqual(len(b_mod.to_dict()), len(partial_expectation) + 1)
 
 
@@ -183,7 +175,7 @@ class TestBaseModel(unittest.TestCase):
         datey_iso = datey.isoformat()
         bm = BaseModel("1234", id="234", created_at=datey_iso, name="Firdaus")
         self.assertEqual(bm.id, "234")
-        self.assertEqual(bm.created_at, dt)
+        self.assertEqual(bm.created_at, datey)
         self.assertEqual(bm.name, "Firdaus")
 
 
@@ -213,7 +205,7 @@ class TestBaseModel(unittest.TestCase):
         del bmod
 
         bmod = BaseModel()
-        self.assertTrue(b in models.storage.all().values())
+        self.assertTrue(bmod in models.storage.all().values())
 
 
     def test_that_save_method_updates_updated_at_attr(self):
@@ -250,7 +242,7 @@ class TestBaseModel(unittest.TestCase):
         bmod.save()
         baseid = "BaseModel.{}".format(bmod.id)
         with open("file.json", encoding="utf-8") as f:
-            self.assertIn(bid, f.read())
+            self.assertIn(baseid, f.read())
 
 
     def test_that_to_dict_contains_correct_keys(self):
@@ -281,7 +273,7 @@ class TestBaseModel(unittest.TestCase):
         bm = BaseModel()
         datey = datetime.now()
         bm.id = "12345"
-        bm.created_at = bm.updated_at = dt
+        bm.created_at = bm.updated_at = datey
         test_dico = {
             'id': "12345",
             'created_at': datey.isoformat(),

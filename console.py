@@ -5,10 +5,10 @@ contains the entry point of the command interpreter.
 """
 
 import cmd
-import os
 import re
-import models
+import json
 from shlex import split
+from models import storage
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -17,38 +17,44 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
-# Define a valid class of global constant for the project that serve
-# functions within and outside.
-__CLASSES = [
-        "BaseModel",
-        "User",
-        "City",
-        "Place",
-        "State",
-        "Amenity",
-        "Review"
-    ]
+
+def valid_clss(self):
+    """
+    This defines the dictionary for all valid global classes
+    within and outside, with their references
+    """
+
+    valid_clss = {
+            "BaseModel": BaseModel,
+            "User": User,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Place": Place,
+            "Review": Review
+            }
+    return valid_clss
 
 
-def parse(arg):
-    braces = re.search(r"\{(.*?)\}", arg)
-    bracks = re.search(r"\[(.*?)\]", arg)
-    if braces is None:
-        if bracks is None:
-            return [i.strip(",") for i in split(arg)]
+def parse(par):
+    curl_bracs = re.search(r"\{(.*?)\}", par)
+    sq_bracs = re.search(r"\[(.*?)\]", par)
+    if curl_bracs is None:
+        if sq_bracs is None:
+            return [s.strip(",") for s in split(par)]
         else:
-            lex = split(arg[:bracks.span()[0]])
-            retlist = [i.strip(",") for i in lex]
-            retlist.append(bracks.group())
-            return retlist
+            opt = split(par[:sq_bracs.span()[0]])
+            newlist = [s.strip(",") for s in opt]
+            newlist.append(sq_bracs.group())
+            return newlist
         else:
-            lex = split(arg[:braces.span()[0]])
-            retlist = [i.strip(",") for i in lex]
-            retlist.append(braces.group())
-            return retlist
+            opt = split(par[:curl_bracs.span()[0]])
+            newlist = [s.strip(",") for s in opt]
+            newlist.append(curl_bracs.group())
+            return newlist
 
 
-def check_status(args):
+def check_status(par):
     """This function checks if args is a valid argument
     Argument:
         args (str): The string containing the arguments passes
@@ -57,32 +63,41 @@ def check_status(args):
             An error message if args is None or is not
             a valid class, else the argument.
     """
-    listarg = parse(args)
-    if len(listarg) == 0:
+    arg_list = parse(par)
+    if len(arg_list) == 0:
         print("** class name missing **")
-        elif listarg[0] is not in __CLASSES:
+        elif arg_list[0] is not in valid_clss:
             print("** class doesn't exist **")
         else:
-            return listarg
+            return arg_list
 
 
 class HBNBCommand(cmd.Cmd):
-    """This class function defines the command interpreter that
-    imlements the console for AirBnB clone project application.
+    """This class module defines the command interpreter that
+    implements the console for AirBnB clone project application.
 
     Attributes:
         prompt (str): The command prompt.
     """
     prompt = "(hbnb)"
-    storage_db = models.storage
+
+    def EOF(self, par):
+        """This instruct the program to Exit, when executed."""
+        print("")
+        return True
+
+    def quit(self, par):
+        """The Quit command exit the program."""
+        return True
 
     def emptyline(self):
-        """Execute nothing upon receiving an empty line"""
+        """Execute nothing upon an empty line instruction"""
         pass
 
-    def default(self, arg):
-        """This defines the default behaviour for cmd when input is invalid"""
-        arg_dictionary = {
+    def default(self, par):
+        """Defines the default behaviour for cmd module if input is invalid"""
+
+        dictionary = {
             "all": self.do_all,
             "show": self.do_show,
             "destroy": self.do_destroy,
@@ -91,125 +106,121 @@ class HBNBCommand(cmd.Cmd):
             "create": self.do_create
         }
 
-        pair = re.search(r"\.", arg)
-        if pair:
-            listarg = [arg[:pair.span()[0]], arg[pair.span()[1]:]]
-            pair = re.search(r"\((.*?)\)", listarg[1])
-            if pair:
-                command = [listarg[1][:pair.span()[0]], pair.group()[1:-1]]
-                if command[0] in arg_dictionary:
-                    call = "{} {}".format(argl[0], command[1])
-                    return arg_dictionary[command[0]](call)
+        link = re.search(r"\.", par)
+        if link:
+            arg_list = [par[:link.span()[0]], par[link.span()[1]:]]
+            link = re.search(r"\((.*?)\)", arg_list[1])
+            if link:
+                cmnd = [arg_list[1][:link.span()[0]], link.group()[1:-1]]
+                if cmnd[0] in dictionary:
+                    use = "{} {}".format(arg_list[0], cmnd[1])
+                    return dictionary[cmnd[0]](use)
 
-        print("** Unknown syntax: {}".format(arg))
+        print("** Unknown syntax: {}".format(par))
         return False
 
-    def do_EOF(self, arg):
-        """Exit the program when executed."""
-        print("")
-        return True
-
-    def do_quit(self, arg):
-        """Quit command to exit the program."""
-        return True
-
-    def do_create(self, arg):
+    def create(self, par):
         """This function creates a new instance of BaseModel,
         saves it (to a JSON file) and prints the id
         Usage: create <class>"""
-        args = check_status(arg)
-        if args:
+        arg_list = check_status(par)
+        if arg_list:
             print(eval(args[0])().id)
-            self.storage_db.save()
+            storage.save()
 
-    def do_show(self, arg):
+    def show(self, par):
         """This function prints the string representation of a
         class instance based on the class and id.
         Usage: show <class> <id> or <class.show(<id>)
         """
-        args = check_status(arg)
-        if args:
-            if len(args) != 2:
+        arg_list = check_status(par)
+        if args_list:
+            if len(args) == 1:
                 print("** instance id missing **")
             else:
-                kp = "{}.{}".format(args[0], args[1])
-                if kp is not in self.storage_db.all():
+                kp = "{}.{}".format(arg_list[0], arg_list[1])
+                if kp is not in storage.all():
                     print("** no instance found **")
                 else:
-                    print(self.storage_db.all()[kp])
+                    print(storage.all()[kp])
 
-    def do_all(self, arg):
+    def destroy(self, par):
+        """
+        This function deletes a class instance based on the name
+        and given id.
+        Usage: destroy <class> <id> or <class>.destroy(<id>)
+        """
+        args = check_status(par)
+        if args:
+            if len(args) == 1:
+                print("** instance id imissing **")
+            else:
+                kp = "{}.{}".format(args[0], args[1])
+                if kp in storage.save():
+                    del storage.save()
+                else:
+                    print("** no instance found **")
+
+    def all(self, par):
         """This function prints all string representation of all
         instances of a given class. If no class is specified,
         it displays instantiated objects.
         Usage: all or all <class> or <class>.all()
         """
-        listarg = split(arg)
-        objs = self.storage_db.all().values()
-        if not listarg:
-            print([str(obj) for obj in objs])
+        args = split(par)
+        items = storage.all().values()
+        if not args:
+            print([str(item) for item in items])
         else:
-            if listarg[0] is not in __CLASSES:
+            if arglist[0] is not in valid_clss:
                 print("** class doesn't exist **")
             else:
-                print([str(obj) for obj in objs if listarg[0] in str(obj)])
+                print([str(item) for item in items if args[0] in str(item)])
 
-    def do_destroy(self, arg):
+    def update(self, par):
+        """This function updates an instance based on the class name and
+        id by adding or updating attributes then save it to JSON file.
+        Usage: update <class> <id> <attribute_name> <attribute_value> or
+        <class name>.update(<id>, <dictionary>) or
+        <class name>.update(<id>, <attribute_name>, <attribute_value>)
         """
-        This function delete a class instance based on
-        the name and given id.
-        Usage: destroy <class> <id> or <class>.destroy(<id>)
-        """
-        listarg = check_status(arg)
-        if listarg:
-            if len(argList) == 1:
-                print("** instance id imissing **")
+        args = check_status(par)
+        if args:
+            if len(args) == 1:
+                print("** instance id missing **")
+                return False
             else:
-                kp = "{}.{}".format(*listarg)
-                if kp in self.storage_db.save():
-                    del self.storage_db.save()
+                kp = "{}.{}".format(args[0], args[1])
+                if kp is in storage.all():
+                    if len(args) == 2:
+                        print("** attribute name missing **")
+                        return False
+                    elif len(args) == 3:
+                        print("** value missing **")
+                        Return False
+                    else:
+                        item = storage.all()[kp]
+                        if args[2] is in type(item).__dict__:
+                            valuetyp = type(item.__class__.__dict__[args[2]])
+                            setattr(item, args[2], valuetyp(args[3]))
+                        else:
+                            setattr(item, args[2], args[3])
                 else:
                     print("** no instance found **")
+                    return False
+            storage.save()
 
-    def do_update(self, arg):
+    def count(self, par):
+        """This function retrieves the number of instances of a given class
+        Usage: count <class> or <class>.count()
         """
-        This function updates an instance based on the class
-        name and id by adding or updating attribute,
-        and save it to the JSON file.
-        Usage: update <class> <id> <attribute_name> <attribute_value> or
-        <class>.update(<id>, <dictionary>)
-        """
-        listarg = check_status(arg)
-        if listarg:
-            if len(listarg) == 1:
-                print("** instance id missing **")
-            else:
-                idinstance = "{}.{}".format(listarg[0], listarg[2])
-                if idinstance in self.storage_db.all():
-                    if len(listarg) == 2:
-                        print("** attribute name missing **")
-                    elif len(listarg) == 3:
-                        print("** value missing **")
-                    else:
-                        obj = self.storage.all()[idinstance]
-                        if listarg[2] in type(obj).__dict__:
-                            v_type = type(obj.__class__.__dict__[listarg[2]])
-                            setattr(obj, listarg[2], v_type(listarg[3]))
-                        else:
-                            print("** no instance found **")
+        arg_list = parse(par)
+        c = 0
+        for item in storage.all().values():
+            if arg_list[0] == item.__class__.__name__:
+                c += 1
+        print(c)
 
-                    self.storage_db.save()
 
-    def do_count(self, arg):
-        """
-        This function retrieves the number of instances of a class
-        Usage: count <class> or <class>.count()"""
-        listarg = parse(arg)
-        count = 0
-        for obj in models.storage.all().values():
-            if listarg[0] == type(obj).__name__:
-                count += 1
-        print(count)
-
-    if __name__ = "__main__":
-        HBNBCommand().cmdloop()
+if __name__ = "__main__":
+    HBNBCommand().cmdloop()

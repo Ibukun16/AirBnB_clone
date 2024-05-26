@@ -1327,7 +1327,7 @@ class TestHBNBCommand(unittest.TestCase):
     def test_update_dot_notation_cmd_with_invalid_id(self):
         with patch("sys.stdout", new=StringIO()) as f:
             self.assertFalse(HBNBCommand().onecmd("BaseModel.update(121212)"))
-            self.assertTrue(
+            self.assertEqual(
                 TestHBNBCommand.missing_instance,
                 f.getvalue().strip()
             )

@@ -112,10 +112,8 @@ class HBNBCommand(cmd.Cmd):
         if args:
             par = args.split()
             if par[0] in HBNBCommand.acpt_classes:
-                arg_list = [
-                    str(val) for key, val in kp.items()
-                    if key.startswith(par[0])
-                ]
+                arg_list = [str(val) for key, val in kp.items()
+                            if key.startswith(par[0])]
                 print(arg_list)
             else:
                 print("** class doesn't exist **")
@@ -135,16 +133,16 @@ class HBNBCommand(cmd.Cmd):
             par = args.split()
             if par[0] not in HBNBCommand.acpt_classes:
                 print("** class doesn't exist **")
-            elif len(par) == 1:
+            elif len(par) < 2:
                 print("** instance id missing **")
             else:
                 kp = storage.all()
                 link = par[0] + "." + par[1]
                 result = kp.get(link, None)
                 if result:
-                    if len(par) == 2:
+                    if len(par) < 3:
                         print("** attribute name missing **")
-                    elif len(par) == 3:
+                    elif len(par) < 4:
                         print("** value missing **")
                     else:
                         try:
@@ -158,7 +156,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class name missing **")
 
-    def _do_update_dict(self, args, cname):
+    def _do_update_dict(self, args, classname):
         """Usage: <class name>.update(<id>, <dictionary representation>)"""
         par = args.split(',', 1)
         try:

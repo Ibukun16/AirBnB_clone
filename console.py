@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """The module contains the HBNBCommand class"""
 import cmd
-import ast
 import re
+import ast
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
@@ -20,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
 
     Attributes:
         prompt (str): The command prompt.
-        """
+    """
 
     prompt = "(hbnb) "
 
@@ -135,22 +135,21 @@ class HBNBCommand(cmd.Cmd):
             par = args.split()
             if par[0] not in HBNBCommand.acpt_classes:
                 print("** class doesn't exist **")
-            elif len(par) < 2:
+            elif len(par) == 1:
                 print("** instance id missing **")
             else:
                 kp = storage.all()
-                sety = par[0] + "." + par[1]
-                result = kp.get(sety, None)
+                link = par[0] + "." + par[1]
+                result = kp.get(link, None)
                 if result:
-                    if len(par) < 3:
+                    if len(par) == 2:
                         print("** attribute name missing **")
-                    elif len(par) < 4:
+                    elif len(par) == 3:
                         print("** value missing **")
                     else:
                         try:
-                            setattr(
-                                result, par[2],
-                                ast.literal_eval(par[3].strip()))
+                            setattr(result, par[2],
+                                    ast.literal_eval(par[3].strip()))
                         except (ValueError):
                             setattr(result, par[2], par[3])
                         result.save()
@@ -160,27 +159,22 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
 
     def _do_update_dict(self, args, cname):
-        """
-        This function updates a class instance of a given id
-        by adding or updating the dictionary.
-
-        Usage: <class name>.update(<id>, <dictionary>)
-        """
+        """Usage: <class name>.update(<id>, <dictionary representation>)"""
         par = args.split(',', 1)
         try:
             add_feat = ast.literal_eval(par[1].strip())
             if type(add_feat) is not dict:
                 print("** Invalid dictionary **")
                 return
-            func = "{}.{}".format(cname, args[0].strip('"').strip())
-            elem = storage.all().get(func, None)
+            func = "{}.{}".format(classname, par[0].strip('"').strip())
+            item = storage.all().get(func, None)
 
-            if elem is None:
+            if item is None:
                 print("** no instance found **")
                 return
 
             for k in add_feat:
-                setattr(elem, k, add_feat[k])
+                setattr(item, k, add_feat[k])
         except BaseException:
             print("** Invalid dictionary **")
 
@@ -282,5 +276,5 @@ class HBNBCommand(cmd.Cmd):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()

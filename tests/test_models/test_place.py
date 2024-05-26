@@ -7,6 +7,7 @@ Unittest classes:
     TestPlace_to_dict
 """
 import os
+import pep8
 import models
 import unittest
 from datetime import datetime
@@ -146,6 +147,12 @@ class TestPlace_instantiation(unittest.TestCase):
 
 class TestPlace_save(unittest.TestCase):
     """Unittests for testing save method of the Place class."""
+
+    def test_style_check(self):
+        """Test for pep8 style"""
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/place.py'])
+        self.assertEqual(p.total_errors, 0, 'fix pep8')
 
     @classmethod
     def setUp(self):

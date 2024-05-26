@@ -7,6 +7,7 @@ Unittest classes:
     TestCity_to_dict
 """
 import os
+import pep8
 import models
 import unittest
 from datetime import datetime
@@ -92,6 +93,12 @@ class TestCity_instantiation(unittest.TestCase):
 
 class TestCity_save(unittest.TestCase):
     """Unittests for testing save method of the City class."""
+
+    def test_style_check(self):
+        """Test for pep8 style"""
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/city.py'])
+        self.assertEqual(p.total_errors, 0, 'fix pep8')
 
     @classmethod
     def setUp(self):

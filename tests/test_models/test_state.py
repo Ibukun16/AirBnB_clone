@@ -7,6 +7,7 @@ Unittest classes:
     TestState_to_dict
 """
 import os
+import pep8
 import models
 import unittest
 from datetime import datetime
@@ -86,6 +87,12 @@ class TestState_instantiation(unittest.TestCase):
 
 class TestState_save(unittest.TestCase):
     """Unittests for testing save method of the State class."""
+
+    def test_style_check(self):
+        """Test for pep8 style"""
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/state.py'])
+        self.assertEqual(p.total_errors, 0, 'fix pep8')
 
     @classmethod
     def setUp(self):

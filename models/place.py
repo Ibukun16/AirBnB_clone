@@ -6,7 +6,8 @@ from models.base_model import BaseModel
 class Place(BaseModel):
     """
     This implements the Place model
-    Args:
+
+    Attributes:
         city_id (str): The City id.
         user_id (str): The User id.
         name (str): The name of the place.

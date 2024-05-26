@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This module defones the Review class."""
+""" This module defines the Review class."""
 from models.base_model import BaseModel
 
 

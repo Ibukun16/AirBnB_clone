@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines the unittests for models/amenity.py.
+"""Defines unittests for models/amenity.py.
 
 Unittest classes:
     TestAmenity_instantiation
@@ -7,6 +7,7 @@ Unittest classes:
     TestAmenity_to_dict
 """
 import os
+import pep8
 import models
 import unittest
 from datetime import datetime
@@ -30,7 +31,37 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(datetime, type(Amenity().created_at))
 
     def test_updated_at_is_public_datetime(self):
-        self.assertEqual(datetime, _at = am.updated_at = dt
+        self.assertEqual(datetime, type(Amenity().updated_at))
+
+    def test_name_is_public_class_attribute(self):
+        am = Amenity()
+        self.assertEqual(str, type(Amenity.name))
+        self.assertIn("name", dir(Amenity()))
+        self.assertNotIn("name", am.__dict__)
+
+    def test_two_amenities_unique_ids(self):
+        am1 = Amenity()
+        am2 = Amenity()
+        self.assertNotEqual(am1.id, am2.id)
+
+    def test_two_amenities_different_created_at(self):
+        am1 = Amenity()
+        sleep(0.05)
+        am2 = Amenity()
+        self.assertLess(am1.created_at, am2.created_at)
+
+    def test_two_amenities_different_updated_at(self):
+        am1 = Amenity()
+        sleep(0.05)
+        am2 = Amenity()
+        self.assertLess(am1.updated_at, am2.updated_at)
+
+    def test_str_representation(self):
+        dt = datetime.today()
+        dt_repr = repr(dt)
+        am = Amenity()
+        am.id = "123456"
+        am.created_at = am.updated_at = dt
         amstr = am.__str__()
         self.assertIn("[Amenity] (123456)", amstr)
         self.assertIn("'id': '123456'", amstr)
@@ -57,6 +88,12 @@ class TestAmenity_instantiation(unittest.TestCase):
 
 class TestAmenity_save(unittest.TestCase):
     """Unittests for testing save method of the Amenity class."""
+
+    def test_style_check(self):
+        """Test for pep8 style"""
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/place.py'])
+        self.assertEqual(p.total_errors, 0, 'fix pep8')
 
     @classmethod
     def setUp(self):

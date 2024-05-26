@@ -9,6 +9,7 @@ Unittest classes:
 import os
 import models
 import unittest
+import pep8
 from datetime import datetime
 from time import sleep
 from models.review import Review
@@ -98,6 +99,12 @@ class TestReview_instantiation(unittest.TestCase):
 
 class TestReview_save(unittest.TestCase):
     """Unittests for testing save method of the Review class."""
+
+    def test_style_check(self):
+        """Test for pep8 style"""
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/review.py'])
+        self.assertEqual(p.total_errors, 0, 'fix pep8')
 
     @classmethod
     def setUp(self):

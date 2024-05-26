@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """This module is the FileStorage class."""
 import json
-import os
-import datetime
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -41,57 +39,52 @@ class FileStorage:
     def save(self):
         """Serialize __objects to the JSON file __file_path."""
         objdic = FileStorage.__objects
-        dictn = {key: val.to_dict() for key, val in objdic.items()}
+        dictn = {val: objdic[val].to_dict() for val in objdic.keys()}
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
             json.dump(dictn, f)
 
     def reload(self):
         """Deserialize the JSON file __file_path to __objects, if it exists."""
-        if not os.path.isfile(FileStorage.__file_path):
-            return
-        with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
-            for item in json.load(f).values():
-                self.new(eval(item["__class__"])(**item))
+        try:
+            with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
+                for item in json.load(f).values():
+                    self.new(eval(item["__class__"])(**item))
         except FileNotFoundError:
             return
 
-        def attributes(self):
-            """
-            This returns the valid attributes with the corresponding
-            types for classname
-            """
-            attributes = {
-                "BaseModel":
-                         {"id": str,
-                          "created_at": datetime.datetime,
-                          "updated_at": datetime.datetime},
-                "User":
-                         {"email": str,
-                          "password": str,
-                          "first_name" str,
-                          "last_name": str},
-                "State":
-                         {"name": str},
-                "City":
-                         {"state_id": str,
-                          "name": str},
-                "Amenity":
-                         {"name": str},
-                "Place":
-                         {"city_id": str,
-                          "user_id": str,
-                          "name": str,
-                          "description": str,
-                          "number_rooms": int,
-                          "number_bathrooms": int,
-                          "max_guest": int,
-                          "price_by_night": int,
-                          "latitude": float,
-                          "longitude": float,
-                          "amenity_ids": list},
-                "Review":
-                         {"place_id": str,
-                          "user_id": str,
-                          "text": str}
-            }
-            return attributes
+    def attributes(self):
+        """This module returns the valid attributes with the
+        corresponding type for classname"""
+        attributes = {
+            "BaseModel":
+                     {"id": str,
+                      "created_at": datetime.datetime,
+                      "updated_at": datetime.datetime},
+            "User":
+                     {"email": str,
+                      "password": str,
+                      "first_name": str,
+                      "lsat_name": str},
+            "State":
+                     {"name": str},
+            "City":
+                     {"state_id": str,
+                      "name": str},
+            "Amenity":
+                     {"city_id": str,
+                      "user_id": str,
+                      "name": str,
+                      "description": str,
+                      "number_rooms": int,
+                      "number_bathrooms": int,
+                      "max_guest": int,
+                      "price_by_night": int,
+                      "latitude": float,
+                      "longitude": float,
+                      "amenity_ids": list},
+            "Review":
+                     {"place_id": str,
+                      "user_id": str,
+                      "text": str}
+        }
+        return attributes

@@ -4,9 +4,9 @@ from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """This class is a subclass of BaseModel class with additional
-    public class attributes
-    (a) name (str) - The name of the amenity is (empty string)
-    """
+    """Amenity class with additional public class attributes.
 
+    Attributes:
+        name (str) - The name of the amenity is (empty string)
+    """
     name = ""

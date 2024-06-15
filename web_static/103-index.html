@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="vieport" content="width=device-width, initial-scale=1.p">
+		<link rel="stylesheet" href="styles/103-common.css" type="text/css">
+		<link rel="stylesheet" href="styles/103-header.css" type="text/css">
+		<link rel="stylesheet" href="styles/103-footer.css" type="text/css">
+		<link rel="stylesheet" href="styles/103-filters.css" type="text/css">
+		<link rel="stylesheet" href="styles/103-places.css" type="text/css">
+		<link rel="icon" href="images/icon.png" type="image/png">
+		<title>AirBnB clone</title>
+	</head>
+	<body>
+		<header>
+			<div class="logo"></div>
+			<div class="mobile_nav" role="navigation" arai-label="Navigate through site content">
+				<label for="main_check" class="main_nav_burguer" aria-label="Responsive popup menu">|||</label>
+				<input type="checkbox" id="main_check" name="main_check" class="main_nav_check" aria-hidden="true" tabindex=0>
+				<nav>
+					<ul class="nav_bar_level1">
+						<li>
+							<label for="second_check"><span>States</span></label>
+							<input type="checkbox" name="second_check" id="second_check" aria-hidden="true">
+							<ul>
+								<li><span>Arizona</span></li>
+								<li><span>California</span></li>
+							</ul>
+						</li>
+						<li>
+							<label for="third_check"><span>Amenities</span></label>
+							<input type="checkbox" name="second_check" id="third_check" aria-hidden="true">
+							<ul>
+								<li><span>Internet</span></li>
+								<li><span>TV</span></li>
+								<li><span>Wifi</span></li>
+								<li><span>Kitchen</span></li>
+								<li><span>Iron</span></li>
+							</ul>
+						</li>
+					</ul>
+				</nav><!-- final del main_nav_bar -->
+			</div>
+		</header>
+		<div class="container">
+			<section class="filters" role="navigation">
+				<div class="locations">
+					<h3>States</h3>
+					<h4>California, Arizona..</h4>
+					<ul class="popover">
+						<li><h2>Arizona:</h2>
+							<ul>
+								<li>Page</li>
+								<li>Page2</li>
+							</ul>
+						</li>
+						<li><h2>California:</h2>
+							<ul>
+								<li>San Francisco</li>
+								<li>Los Altos</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="amenities">
+					<h3>Amenities</h3>
+					<h4>Internet, Wifi, TV, Iron, Kitchen...</h4>
+					<ul class="popover">
+						<li>Internet</li>
+						<li>TV</li>
+						<li>Kitchen</li>
+						<li>Wifi</li>
+						<li>Iron</li>
+					</ul>
+				</div>
+				<button type="button" name="button">Search</button>
+			</section><!-- end filter class -->
+			<section class="places">
+				<h1>Places</h1>
+				<article><!-- My home -->
+					<div class="article_places_header">
+						<h2>My home</h2>
+						<div class="price_by_night">$100</div>
+					</div>
+					<div class="information">
+						<div class="max_guest">2 Guests</div>
+						<div class="number_rooms">1 Bedroom</div>
+						<div class="number_bathrooms">1 Bathroom</div>
+					</div><!-- end of information class -->
+					<div class="user">
+						<p><b>Owner:</b>Omowumi Crown</p>
+					</div><!-- end of user class -->
+					<div class="description">
+						<p>This is a lovely mini flat apartment that can conveniently accommodate 2 people.
+						It is located in the safest part of the town at close proximity to the internation
+						market and the transportation hub.</p>
+					</div><!-- end of description class -->
+					<div class="amenities">
+						<h2>Amenities</h2>
+						<ul>
+							<li>
+								<div class="pet_friendly"></div>
+								Pet Friendly
+							</li>
+							<li>
+								<div class="amenities_tv"></div>
+								TV
+							</li>
+							<li>
+								<div class="amenities_wifi"></div>
+								Wifi
+							</li>
+						</ul>
+					</div>
+					<div class="reviews">
+						<h2>2 Reviews</h2>
+						<ul>
+							<li>
+								<h3>From Brown Trust the 5th of January 2024</h3>
+								<p>The facility is one of the nicest i have ever been too.
+								It is very classic and alurring. It is a home away from home. 
+								I rate it 5 star!</p>
+							</li>
+							<li>
+								<h3>From Connor Calvin 20th of January 2024</h3>
+								This uniquely beautiful mini edifice is highly recommended, kudos to the owner!</p>
+							</li>
+						</ul>
+					</div>
+				</article><!-- end of the article class -->
+				<article>
+					<h2>Tiny House</h2>
+					<div class="price_by_night">$80$</div>
+					<div class="information">
+						<div class="max_guest">4 Guests</div>
+						<div class="number_rooms">2 Bedrooms</div>
+						<div class="number_bathrooms">1 Bathrooms</div>
+					</div><!-- end of information class -->
+					<div class="user">
+						<p><b>Owner:</b>Mojisola Crown</p>
+					</div><!-- end of user class -->
+					<div class="description">
+						<p>This is a private family inn for modest guests. It is a stand alone
+						facility on an expanse of land sorrounded by agricultural plantations.
+						It is located at the outskirt of the town but the side of the dual
+						carriage expressway, it is about 20 min drive to the local airport,
+						10 min drive from the cargo airport and 15 min drive to the interstate train station</p></div><!-- end of description class -->
+					<div class="amenities">
+						<h2>Amenities</h2>
+						<ul>
+							<li>
+								<div class="pet_friendly"></div>
+								Pet Friendly
+							</li>
+						</ul>
+					</div>
+					<div class="reviews">
+						<h2>2 Reviews</h2>
+						<ul>
+							<li>
+								<h3>From Maxmilan the 15th of October 2023</h3>
+								<p>The facility is a serene modest house with modern gadget. 
+								It is highly rated. The environment is cool making one enjoy
+								the beauty of nature.</p>
+							</li>
+							<li>
+								<h3>From Johny Walker 10 of November 2023</h3>
+								<p>The facility is highly rated a mssaive 5 star!</p>
+							</li>
+						</ul>
+					</div>
+				</article>
+				<article>
+					<h2>A suite</h2>
+					<div class="price_by_night">$280</div>
+					<div class="information">
+						<div class="max_guest">6 Guests</div>
+						<div class="number_rooms">3 Bedrooms</div>
+						<div class="number_bathrooms">4 Bathrooms</div>
+					</div><!-- end of information class -->
+					<div class="user">
+						<p><b>Owner:</b>Tunde Crown</p>
+					</div><!-- end of user clas -->
+					<div class="description">
+						<p>This is a magnificient building. It is a fully detached duplex fitted
+						with the latest modern gadgets including voice control, access control,
+						remote security control system and powered by AI. It is the luxurious
+						facility with full size swimming pools, jaccuzi and underground acquarium.</p>
+					</div><!-- end of description class -->
+					<div class="amenities">
+						<h2>Amenities</h2>
+						<ul>
+							<li>
+								<div class="pet_friendly"></div>
+								Pet Friendly
+							</li>
+							<li>
+								<div class="amenities_wifi"></div>
+								Wifi
+							</li>
+						</ul>
+					</div>
+				
+					<div class="reviews">
+						<h2>1 Review</h2>
+						<ul>
+							<li>
+								<h3>From Bradt Pitt the 25th of May 2024</h3>
+								<p> This is so alurring. It is surreal that a facility like
+							this could exist in such a cool environment away from the bustling
+							city life. It is amazing, I so much love it. I rate it 6 star!</p>
+							</li>
+						</ul>
+					</div>
+				</article>
+				
+				<article><!-- My home -->
+					<div class="article_places_header">
+						<h2>My house</h2>
+						<div class="price_by_nigh">$80</div>
+					</div>
+					<div class="information">
+						<div class="max_guest">2 Guests</div>
+						<div class="number_rooms">1 Bedroom</div>
+						<div class="number_bathrooms">1 Bathroom</div>
+					</div><!-- end of information -->
+					<div class="user">
+						<p><b>Owner:</b>Precious Crown</p>
+					</div><!-- end of user class -->
+					<div class="description">
+						<p>This is a nice mini flat apartment ideal for couple vacation.
+						It can conveniently accommodation 2 people. It is all modern
+						house accessories and modern home gadgets including sophisticated
+						security and survellance gadget. It is a beautiful beach house 
+						adjacent to the main expressway close to the country border. 
+						It is about 30 min drive to the airport.</p>
+					</div><!-- end of description class -->
+					<div class="amenities">
+						<h2>A menities</h2>
+						<ul>
+							<li>
+								<div class="pet_friendly"></div>
+								Pet Friendly
+							</li>
+							<li>
+								<div class="amenities_tv"></div>
+								Tv
+							</li>
+							<li>
+								<div class="amenities_wifi"></div>
+								Wifi
+							</li>
+						</ul>
+					</div>
+					<div class="reviews">
+						<h2>2 Reviews</h2>
+						<ul>
+							<li>
+								<h3>From Dan Foster 29th of April 2024</h3>
+								<p>This apartment is gracefully furnished and the modestly beautiful. I rate it a wooping 5 star!</p>
+							</li>
+							<li>
+								<h3>From Candor Ranor 4th of June 2024</h3>
+								The elegance of the outside part of the facility
+								did not give any clue to the alurring sophisticated beauty
+								conceal within the facility. I recommend this edifice and
+								rate it 5 star!</p>
+							</li>
+						</ul>
+					</div>
+				</article><!-- end of the class - MY home -->
+				<article><!-- another of my home -->
+					<div class="article_places_header">
+						<h2>Balsamic Home</h2>
+						<div class="price_by_night">$100</div>
+					</div>
+					<div class="information">
+						<div class="max_guest">2 Guests</div>
+						<div class="number_rooms">1 Bedroom</div>
+						<div class="number_bathrooms">1 Bathrooms</div>
+					</div><!-- end  of infromation class -->
+					<div class="user">
+						<p><b>Owner:</b>Enoc Crown</p>
+					</div><!-- end of user class -->
+					<div class="description">
+						<p>This is a uniquely built single room self contain apartment
+						ideal for a couple. It is located in the heart of the town about 5 min
+						drive to the internatioinal market and the inter city metro bus park.
+						It is adjacent the metro station. It is beautifully furnished with latest gadgets.</p>
+					</div><-- end of description class>
+					<div class="amenities">
+						<h2>Amenities</h2>
+						<ul>
+							<li>
+								<div class="pet_friendly"></div>
+								Pet Friendly
+							</li>
+							<li>
+								<div class="amenities_tv"></div>
+								TV
+							</li>
+							<li>
+								<div class="amenities_wifi"></div>
+								Wifi
+							</li>
+						</ul>
+					</div>
+					<div class="reviews">
+						<h2>2 Reviews</h2>
+						<ul>
+							<li>
+								<h3>From Gad Madrin the 6th June 2024</h3>
+								<p>The facility is mind blowing. I rate it a massive 5 star!</p>
+							</li>
+							<li>
+								<h3>From Graham Benson the 12th of June 2024</h3>
+								<p>The facility is top notch. Nothing else to say. It is highly recommend!</p>
+							</li>
+						</ul>
+					</div>
+				</article><!-- end of another of my home -->
+				<article><!-- My third home -->
+					<div class="article_places_header">
+						<h2>Gilead Abike</h2>
+						<div class="price_by_night">$200</div>
+					</div>
+					<div class="information">
+						<div class="max_guest">5 Guest</div>
+						<div class="number_rooms">3 Bedrooms</div>
+						<div class="number_bathrooms">4 Bathrooms</div>
+					</div><!-- end of infromation class -->
+					<div class="user">
+						<p><b>Owner:</b>Gilead Momore</p>
+					</div><!-- end of user class -->
+					<div class="description">
+						<p>This is a lovely 3 bedroom apartment with a massive 4 bathrooms
+						and 2 sitting rooms located in the calmest and cleanest part of the city.
+						It is at close proximity to the major inrastuctures in the city.</p>
+					</div><!-- end of description class -->
+					<div class="amenities">
+						<h2>Amenities</h2>
+						<ul>
+							<li>
+								<div class="pet_friendly"></div>
+								Pet Friendly
+							</li>
+							<li>
+								<div class="amenities_tv"></div>
+								TV
+							</li>
+							<li>
+								<div class="amenities_wifi"></div>
+								Wifi
+							</li>
+						</ul>
+					</div>
+					<div class="reviews">
+						<h2>2 Reviews</h2>
+						<ul>
+							<li>
+								<h3>From Mark Cuban the 18th of April 2024</h3>
+								<p>The building is magnificient and the atmosphere is serene. I rate it a massive 6 star!</p>
+							</li>
+							<li>
+								<h3>From Brian Nuel the 24th of May 2024</h3>
+								<p>This facility is stunning. Nothing else to say that it is highly recommended, a massive 6 star!</p>
+							</li>
+						</ul>
+					</div>
+				</article><!-- end of Another class of my home -->
+			</section><!-- end of section class -->
+		</div>
+		<footer aria-label="Footer brand information">
+			<p>Best School</p>
+		</footer>
+	</body>
+</html>

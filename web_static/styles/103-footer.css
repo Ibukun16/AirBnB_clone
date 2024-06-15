@@ -1,0 +1,31 @@
+@media only screen and (max-width: 600px){
+}
+
+/** Small machines like portable tablets of 600px and above **/
+@media only screen and (min-width: 600px){
+
+}
+/** Medium machines like landscape tablets of 768px amd above **/
+@media only screen and (min-width: 768px){
+
+}
+/** Large machines like  Laptops and desktops of 992px and above **/
+@media only screen and (min-width: 992px){
+
+}
+footer{
+	clear: left;
+	height: 60px;
+	width: 100%;
+	border-top: 1px solid #CCCCCC;
+	display: flex;
+	background-color: #FFFFFF;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+footer p{
+	color:#484848;
+	text-align: center;
+}
